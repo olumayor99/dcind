@@ -25,8 +25,9 @@ RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_
     mv /docker/* /bin/ && \
     chmod +x /bin/docker*
 
-RUN pip3 install docker-compose==${DOCKER_COMPOSE_VERSION} && \
-    rm -rf /root/.cache
+RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
+
+RUN rm -rf /root/.cache
 
 # Include functions to start/stop docker daemon
 COPY docker-lib.sh /docker-lib.sh
