@@ -13,13 +13,11 @@ RUN apk --no-cache add \
     device-mapper \
     libffi-dev \
     openssl-dev \
-    py-pip \
-    python-dev \
+    py3-pip \
+    python3-dev \
     gcc \
     libc-dev \
     make \
-    rust \
-    cargo \
     iptables
 RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
     mv /docker/* /bin/ && \
