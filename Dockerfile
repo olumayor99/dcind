@@ -3,7 +3,7 @@ FROM alpine:3.18.3
 LABEL maintainer="Dmitry Matrosov <amidos@amidos.me>"
 
 ENV DOCKER_VERSION=24.0.5 \
-    DOCKER_COMPOSE_VERSION=1.29.2
+    DOCKER_COMPOSE_VERSION=1.29.1
 
 # Install Docker and Docker Compose
 RUN apk --no-cache add \
