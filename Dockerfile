@@ -5,7 +5,7 @@ LABEL maintainer="Olumayowa Taiwo <olumayor99@gmail.com>"
 ENV DOCKER_COMPOSE_VERSION=2.20.2-r1
 
 # Install Docker and Docker Compose
-RUN apk --no-cache add --update \
+RUN apk --no-cache add \
     bash \
     curl \
     util-linux \
@@ -18,7 +18,8 @@ RUN apk --no-cache add --update \
     libc-dev \
     make \
     iptables \
-    docker-compose==${DOCKER_COMPOSE_VERSION}
+    docker \
+    docker-compose
 
 
 
