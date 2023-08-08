@@ -21,7 +21,7 @@ RUN apk --no-cache add \
     docker \
     docker-compose
 
-
+RUN docker --version
 
 # Include functions to start/stop docker daemon
 COPY docker-lib.sh /docker-lib.sh
