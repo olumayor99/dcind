@@ -13,8 +13,8 @@ RUN apk --no-cache add \
     device-mapper \
     libffi-dev \
     openssl-dev \
-    py3-pip \
-    python3-dev \
+    py-pip \
+    python-dev \
     gcc \
     libc-dev \
     make \
@@ -25,7 +25,7 @@ RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_
     mv /docker/* /bin/ && \
     chmod +x /bin/docker*
 
-RUN pip3 install docker-compose==${DOCKER_COMPOSE_VERSION}
+RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
 
 RUN rm -rf /root/.cache
 
