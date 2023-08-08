@@ -2,9 +2,10 @@ FROM alpine:3.18.3
 
 LABEL maintainer="Olumayowa Taiwo <olumayor99@gmail.com>"
 
-ENV DOCKER_COMPOSE_VERSION=2.20.2-r1
+ENV DOCKER_VERSION=23.0.6-r4 \
+    DOCKER_COMPOSE_VERSION=2.17.3-r5
 
-# Install Docker and Docker Compose
+# Install Dependencies
 RUN apk --no-cache add \
     bash \
     curl \
@@ -18,8 +19,8 @@ RUN apk --no-cache add \
     libc-dev \
     make \
     iptables \
-    docker=23.0.6-r4 \
-    docker-compose=2.17.3-r5
+    docker=${DOCKER_VERSION} \
+    docker-compose=${DOCKER_COMPOSE_VERSION}
 
 RUN docker --version
 
