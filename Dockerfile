@@ -1,9 +1,8 @@
-# Inspired by https://github.com/mumoshu/dcind
 FROM alpine:3.18.3
-LABEL maintainer="Dmitry Matrosov <amidos@amidos.me>"
 
-ENV DOCKER_VERSION=24.0.5 \
-    DOCKER_COMPOSE_VERSION=1.29.2
+LABEL maintainer="Olumayowa Taiwo <olumayor99@gmail.com>"
+
+ENV DOCKER_COMPOSE_VERSION=2.20.2-r1
 
 # Install Docker and Docker Compose
 RUN apk --no-cache add --update \
@@ -19,19 +18,9 @@ RUN apk --no-cache add --update \
     libc-dev \
     make \
     iptables \
-    docker-compose
+    docker-compose=${DOCKER_COMPOSE_VERSION}
 
-# RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
-#  mv /docker/* /bin/ && \
-#  chmod +x /bin/docker*
 
-# RUN pip install pyyaml~=6.0
-
-# RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
-
-# RUN apk add --update docker-compose
-
-# RUN rm -rf /root/.cache
 
 # Include functions to start/stop docker daemon
 COPY docker-lib.sh /docker-lib.sh
