@@ -22,8 +22,6 @@ RUN apk --no-cache add \
     docker=${DOCKER_VERSION} \
     docker-compose=${DOCKER_COMPOSE_VERSION}
 
-RUN docker --version
-
 # Include functions to start/stop docker daemon
 COPY docker-lib.sh /docker-lib.sh
 COPY entrypoint.sh /entrypoint.sh
