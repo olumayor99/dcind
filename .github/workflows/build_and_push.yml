@@ -15,7 +15,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
 
-            - name: Build Producer Docker image
+            - name: Build Docker image
               run: |
                   docker build -t olumayor99/dcind:latest .
 
