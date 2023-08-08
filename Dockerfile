@@ -18,7 +18,7 @@ RUN apk --no-cache add --update \
     libc-dev \
     make \
     iptables \
-    docker-compose=${DOCKER_COMPOSE_VERSION}
+    docker-compose==${DOCKER_COMPOSE_VERSION}
 
 
 
