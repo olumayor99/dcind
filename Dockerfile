@@ -24,9 +24,11 @@ RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_
     mv /docker/* /bin/ && \
     chmod +x /bin/docker*
 
-RUN pip install pyyaml~=6.0
+# RUN pip install pyyaml~=6.0
 
-RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
+# RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
+
+RUN apk add --update docker-compose
 
 RUN rm -rf /root/.cache
 
