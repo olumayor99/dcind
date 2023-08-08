@@ -24,7 +24,7 @@ RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_
     mv /docker/* /bin/ && \
     chmod +x /bin/docker*
 
-RUN pip3 install pyyaml~=6.0
+RUN pip3 install pyyaml~=6.0 --no-build-isolation
 
 RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
 
