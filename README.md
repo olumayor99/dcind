@@ -5,7 +5,7 @@
 
 ### Versioning
 
-This repository and corresponding images on Docker Hub follow the semantic versioning [rules](https://semver.org/). It is advised to not rely on the `latest` tag when using `amidos/dcind` image in your CI pipelines. Consider using a specific version, like `amidos/dcind:1`.
+This repository and corresponding images on Docker Hub follow the semantic versioning [rules](https://semver.org/). It is advised to not rely on the `latest` tag when using `olumayor99/dcind` image in your CI pipelines. Consider using a specific version, like `olumayor99/dcind:1`.
 
 ### Usage
 
