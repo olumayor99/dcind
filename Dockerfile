@@ -1,9 +1,9 @@
 # Inspired by https://github.com/mumoshu/dcind
-FROM alpine:3.18
+FROM alpine:3.18.3
 LABEL maintainer="Dmitry Matrosov <amidos@amidos.me>"
 
-ENV DOCKER_VERSION=24.0.3 \
-    DOCKER_COMPOSE_VERSION=2.20.1
+ENV DOCKER_VERSION=24.0.5 \
+    DOCKER_COMPOSE_VERSION=1.29.2
 
 # Install Docker and Docker Compose
 RUN apk --no-cache add \
