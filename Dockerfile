@@ -18,8 +18,8 @@ RUN apk --no-cache add \
     libc-dev \
     make \
     iptables \
-    docker \
-    docker-compose
+    docker=23.0.6-r4 \
+    docker-compose=2.17.3-r5
 
 RUN docker --version
 
