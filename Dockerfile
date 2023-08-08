@@ -6,7 +6,7 @@ ENV DOCKER_VERSION=24.0.5 \
     DOCKER_COMPOSE_VERSION=1.29.2
 
 # Install Docker and Docker Compose
-RUN apk --no-cache add \
+RUN apk --no-cache add --update \
     bash \
     curl \
     util-linux \
@@ -18,19 +18,20 @@ RUN apk --no-cache add \
     gcc \
     libc-dev \
     make \
-    iptables
+    iptables \
+    docker-compose
 
-RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
-    mv /docker/* /bin/ && \
-    chmod +x /bin/docker*
+# RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
+#  mv /docker/* /bin/ && \
+#  chmod +x /bin/docker*
 
 # RUN pip install pyyaml~=6.0
 
 # RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
 
-RUN apk add --update docker-compose
+# RUN apk add --update docker-compose
 
-RUN rm -rf /root/.cache
+# RUN rm -rf /root/.cache
 
 # Include functions to start/stop docker daemon
 COPY docker-lib.sh /docker-lib.sh
