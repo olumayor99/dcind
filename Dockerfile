@@ -3,7 +3,7 @@ FROM alpine:3.18.3
 LABEL maintainer="Dmitry Matrosov <amidos@amidos.me>"
 
 ENV DOCKER_VERSION=24.0.5 \
-    DOCKER_COMPOSE_VERSION=1.29.1
+    DOCKER_COMPOSE_VERSION=1.29.2
 
 # Install Docker and Docker Compose
 RUN apk --no-cache add \
@@ -19,12 +19,14 @@ RUN apk --no-cache add \
     libc-dev \
     make \
     iptables
+
 RUN curl https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz | tar zx && \
     mv /docker/* /bin/ && \
     chmod +x /bin/docker*
 
-# RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
-RUN pip3 install docker-compose
+RUN pip3 install pyyaml~=6.0
+
+RUN pip install docker-compose==${DOCKER_COMPOSE_VERSION}
 
 RUN rm -rf /root/.cache
 
